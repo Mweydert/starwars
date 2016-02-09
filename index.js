@@ -41,8 +41,27 @@ function getRandomQuote()
   var randomIndex = Math.floor(Math.random()*quotes.length);
   var randomQuote = quotes[randomIndex];
   console.log(randomQuote.author + " : ");
-  console.log('"' + randomQuote.quote + '"');
+  console.log('"' + randomQuote.quote + '"    \n');
+
 }
+
+function getAuthor(string)
+{
+  var regexExpression = new RegExp(string);
+  for(var i=0; i<quotes.length; i++)
+  {
+    if(regexExpression.test(quotes[i].quote))
+    {
+      console.log(quotes[i].quote);
+    }
+  }
+}
+
+
+
 
 console.log("Here is your random quote : ");
 getRandomQuote();
+
+console.log("identification of quote : ");
+getAuthor("my experience"); //attention au maj
