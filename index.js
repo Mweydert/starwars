@@ -53,10 +53,10 @@ function getAuthor(string)
     if(regexExpression.test(quotes[i].quote))
     {
       console.log(quotes[i].quote);
+      console.log(quotes[i].author);
     }
   }
 }
-
 
 
 
