@@ -40,9 +40,6 @@ function getRandomQuote()
 {
   var randomIndex = Math.floor(Math.random()*quotes.length);
   var randomQuote = quotes[randomIndex];
-  var qu = randomQuote.quote;
-  var q = randomQuote.author;
-  console.log(q + "    " + qu);
 
   ReactDOM.render(
     React.createElement('h1', null, randomQuote.author),
@@ -54,6 +51,7 @@ function getRandomQuote()
     document.getElementById('quote-content')
     );
 }
+getRandomQuote();
 
 
 function getAuthor(string)
@@ -69,10 +67,15 @@ function getAuthor(string)
   }
 }
 
+/*
+var ButtonT = React.createClass( {
+    getInitialState: function() {return {pressed: false}; },
+    handleClick: function(event) { getRandomQuote(); },
+    render: function() { return (<p onClick={this.handleClick}>RRRandom quote</p>);}});
+ReactDOM.render(<ButtonT />, document.getElementById('title'));
+*/
 
 
-console.log("Here is your random quote : ");
-getRandomQuote();
 
-console.log("identification of quote : ");
-getAuthor("my experience"); //attention au maj
+//console.log("identification of quote : ");
+//getAuthor("my experience"); //attention au maj
