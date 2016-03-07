@@ -62,16 +62,21 @@ getRandomQuote();
 function getQuoteFrom(string)
 {
   var regexExpression = new RegExp(string);
+  var arr = [];
   for(var i=0; i<quotes.length; i++)
   {
     if(regexExpression.test(quotes[i].author))
     {
-      console.log(quotes[i].quote);
-      console.log(quotes[i].author);
+      arr.push(quotes[i]);
     }
   }
-}
 
+  var randomIndex2 = Math.floor(Math.random()*arr.length);
+  ReactDOM.render(
+    React.createElement('h2',null, arr[randomIndex2].quote),
+   document.getElementById('darthVader-content')
+   );
+}
 
 console.log("Get quote of : Yoda");
 getQuoteFrom("Yoda"); //attention au maj
