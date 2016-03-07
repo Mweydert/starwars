@@ -40,10 +40,21 @@ function getRandomQuote()
 {
   var randomIndex = Math.floor(Math.random()*quotes.length);
   var randomQuote = quotes[randomIndex];
-  console.log(randomQuote.author + " : ");
-  console.log('"' + randomQuote.quote + '"    \n');
+  var qu = randomQuote.quote;
+  var q = randomQuote.author;
+  console.log(q + "    " + qu);
 
+  ReactDOM.render(
+    React.createElement('h1', null, randomQuote.author),
+   document.getElementById('quote-author')
+   );
+
+   ReactDOM.render(
+     React.createElement('h2',null, randomQuote.quote),
+    document.getElementById('quote-content')
+    );
 }
+
 
 function getAuthor(string)
 {
