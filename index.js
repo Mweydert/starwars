@@ -50,16 +50,21 @@ function getRandomQuote()
      React.createElement('h2',null, randomQuote.quote),
     document.getElementById('quote-content')
     );
+
+    ReactDOM.render(
+      React.createElement('h2',null, randomQuote.quote),
+     document.getElementById('quote-content')
+     );
 }
 getRandomQuote();
 
 
-function getAuthor(string)
+function getQuoteFrom(string)
 {
   var regexExpression = new RegExp(string);
   for(var i=0; i<quotes.length; i++)
   {
-    if(regexExpression.test(quotes[i].quote))
+    if(regexExpression.test(quotes[i].author))
     {
       console.log(quotes[i].quote);
       console.log(quotes[i].author);
@@ -67,15 +72,6 @@ function getAuthor(string)
   }
 }
 
-/*
-var ButtonT = React.createClass( {
-    getInitialState: function() {return {pressed: false}; },
-    handleClick: function(event) { getRandomQuote(); },
-    render: function() { return (<p onClick={this.handleClick}>RRRandom quote</p>);}});
-ReactDOM.render(<ButtonT />, document.getElementById('title'));
-*/
 
-
-
-//console.log("identification of quote : ");
-//getAuthor("my experience"); //attention au maj
+console.log("Get quote of : Yoda");
+getQuoteFrom("Yoda"); //attention au maj
